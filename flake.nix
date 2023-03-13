@@ -12,13 +12,10 @@
           overlays = [ ];
           config.allowUnfree = true;
         };
-        python-env = pkgs.python3.withPackages (p: with p; [
-          numpy
-        ]);
-      in
-      {
+
+      in {
         packages = rec {
-          mediapipe = pkgs.python3.pkgs.callPackage ./mediapipe.nix { };
+          mediapipe = pkgs.python3Packages.callPackage ./mediapipe.nix { };
           default = mediapipe;
         };
       });

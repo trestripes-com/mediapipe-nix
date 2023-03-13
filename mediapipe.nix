@@ -32,7 +32,6 @@ buildPythonPackage rec {
   inherit pname version;
   disabled = pythonOlder "3.8" || pythonAtLeast "3.11";
   format = "wheel";
-  doCheck = false;
 
   poseHeavy = fetchurl {
     url="https://storage.googleapis.com/mediapipe-assets/pose_landmark_heavy.tflite";
